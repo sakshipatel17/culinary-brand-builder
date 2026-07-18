@@ -17,7 +17,6 @@ function AnimatedCounter({ value, suffix = '', prefix = '' }: Props) {
       return;
     }
 
-    let start = 0;
     const duration = 1200;
     const startTime = performance.now();
 

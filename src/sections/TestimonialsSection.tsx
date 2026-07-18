@@ -1,7 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Star } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedSection';
 import SectionHeading from '../components/SectionHeading';
 
 const testimonials = [
