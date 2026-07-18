@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #1f231e;
+  background-color: #f6eedc;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #f6eedc 0%, #fdf8ef 100%);
+  position: relative;
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
+  width: 36rem;
+  height: 36rem;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.24;
+}
+
+body::before {
+  top: -10rem;
+  left: -8rem;
+  background: #cfa24a;
+  animation: drift 18s ease-in-out infinite;
+}
+
+body::after {
+  bottom: -10rem;
+  right: -10rem;
+  background: #6c8b62;
+  animation: drift 22s ease-in-out infinite reverse;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+::selection {
+  background: #b65c3d;
+  color: #fff;
+}
+
+a, button, input, textarea, select, [role='button'] {
+  cursor: none;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3rem, -2rem, 0) scale(1.04);
+  }
+}
+
+@media (hover: none) {
+  a, button, input, textarea, select, [role='button'] {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
